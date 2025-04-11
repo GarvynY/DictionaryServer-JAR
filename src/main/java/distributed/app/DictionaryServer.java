@@ -121,7 +121,17 @@ public class DictionaryServer {
             System.out.println(e.getMessage());
         }finally {
             threadPool.shutdown(); // close threadPool anyway
+            try {
+                if (!threadPool.awaitTermination(60, TimeUnit.SECONDS)) {
+                    threadPool.shutdownNow(); // Force shutdown
+                }
+            } catch (InterruptedException e) {
+                threadPool.shutdownNow();
+                Thread.currentThread().interrupt();
+            }
+
         }
+
 
     }
 
@@ -171,8 +181,7 @@ public class DictionaryServer {
              DataInputStream in = new DataInputStream(clientSocket.getInputStream());
              DataOutputStream out = new DataOutputStream(clientSocket.getOutputStream())) {
 
-            while (true) {
-                // todo: deal with delete / update / add
+            while (!Thread.currentThread().isInterrupted()) {
                 System.out.println("Start to accept data");
                 String operation = in.readUTF();
                 String word = in.readUTF();  // Receive word
@@ -211,6 +220,9 @@ public class DictionaryServer {
             }
         } catch (IOException e) {
             System.out.println("Exception while handling client: " + e.getMessage());
+        }
+        finally {
+            System.out.println("Client connection closed by thread: " + Thread.currentThread().getName());
         }
     }
 
