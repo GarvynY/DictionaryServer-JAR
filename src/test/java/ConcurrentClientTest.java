@@ -19,7 +19,6 @@ public class ConcurrentClientTest {
                      DataOutputStream out = new DataOutputStream(socket.getOutputStream());
                      DataInputStream in = new DataInputStream(socket.getInputStream())) {
 
-                    // 例如进行本地查询请求
                     out.writeUTF("local");
                     out.writeUTF("testWord" + clientId);
                     out.writeUTF("");

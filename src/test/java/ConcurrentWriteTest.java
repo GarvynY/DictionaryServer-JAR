@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ConcurrentWriteTest {
     public static void main(String[] args) throws InterruptedException {
-        int numClients = 50; // 50个并发写请求
+        int numClients = 50;
         ExecutorService executor = Executors.newFixedThreadPool(numClients);
 
         for (int i = 0; i < numClients; i++) {
@@ -18,7 +18,6 @@ public class ConcurrentWriteTest {
                      DataOutputStream out = new DataOutputStream(socket.getOutputStream());
                      DataInputStream in = new DataInputStream(socket.getInputStream())) {
 
-                    // 发送 "add" 请求，添加新的单词和含义
                     String operation = "add";
                     String word = "writeTestWord" + clientId;
                     String meaning = "Meaning for writeTestWord" + clientId;
@@ -28,7 +27,6 @@ public class ConcurrentWriteTest {
                     out.writeUTF(meaning);
                     out.flush();
 
-                    // 读取服务器返回结果
                     String response = in.readUTF();
                     System.out.println("Client " + clientId + " received: " + response);
                 } catch (IOException e) {
