@@ -131,8 +131,6 @@ public class DictionaryServer {
             }
 
         }
-
-
     }
 
     // Local word lookup
@@ -155,7 +153,6 @@ public class DictionaryServer {
             // Wikipedia API to look up words
             System.out.println("Looking up online");
             String apiUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/" + cWord;
-            // todo: Detect language
 
             // GET
             URI uri = new URI(apiUrl);
@@ -333,7 +330,6 @@ public class DictionaryServer {
     }
 
     // check if this is a new word
-    // todo: optimize the data structure
     private static boolean isNewWord(String word) {
         lock.readLock().lock();
         try {
