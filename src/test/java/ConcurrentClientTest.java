@@ -1,3 +1,16 @@
+/**
+        * @Author: Garvyn-Yuan
+ * @FileName: ConcurrentClientTest.java
+ * @Description: Stress test simulating 50 concurrent query clients.
+ * @Date: Created on [Date]
+        * @ModifiedBy: [Modifier Name]
+        * @Version: V1.0
+        * @TestCoverage:
+        * - Local query concurrency validation
+ * - Connection pool stress testing
+ * - Server response consistency check
+ */
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;

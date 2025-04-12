@@ -1,3 +1,16 @@
+/**
+        * @Author: Garvyn-Yuan
+ * @FileName: ConcurrentWriteTest.java
+ * @Description: Write performance benchmark with 50 concurrent writers.
+        * @Date: Created on [Date]
+        * @ModifiedBy: [Modifier Name]
+        * @Version: V1.0
+        * @Metrics:
+        * - Throughput measurement
+ * - Write lock contention analysis
+ * - Data consistency audit
+ */
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;

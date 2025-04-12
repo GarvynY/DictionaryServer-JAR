@@ -1,5 +1,17 @@
 package distributed.app;
-
+/**
+ * @Author: Garvyn-Yuan
+ * @FileName: DictionaryClientGUI.java
+ * @Description: GUI client for dictionary operations, supporting local/remote queries, history tracking, and dictionary management.
+ * @Date: Created at 21:48 on 2025/3/24
+        * @ModifiedBy: Garvyn
+        * @Version: V1.2
+        * @Features:
+        * - Dual-mode query (Local/Remote)
+ * - Interactive history panel with 10-record capacity
+ * - Integrated dictionary CRUD operations
+ * - Network exception handling
+ */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

@@ -1,12 +1,20 @@
+package distributed.app;
+
 /**
  * @Author: Garvyn-Yuan
- * FIle Name: DictionaryServer
- * @Description: his is dictionary Server for assignment 1
- * @Date: File created in 21:48-2025/3/24
- * @Modified by:
- * Version: V1.1
+ * @FileName: DictionaryServer.java
+ * @Description: Multi-threaded dictionary server handling concurrent client requests with cache management.
+        * @Date: Created at 21:48 on 2025/3/24
+        * @ModifiedBy: Garvyn
+        * @Version: V2.0
+        * @Architecture:
+        * - Thread pool with 10 worker threads
+ * - Atomic reference cached dictionary data
+ * - ReadWriteLock for concurrent access control
+ * - Scheduled cache invalidation (30-min timeout)
+ * - Wikipedia API integration for online queries
  */
-package distributed.app;
+
 import distributed.models.LocalWords;
 
 // reader and writer

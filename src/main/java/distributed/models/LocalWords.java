@@ -2,12 +2,18 @@ package distributed.models;
 
 /**
  * @Author: Garvyn-Yuan
- * FIle Name: LocalWords
- * @Description:
- * @Date: File created in 23:14-2025/4/2
- * @Modified by:
- * Version: V1.0
+ * @FileName: LocalWords.java
+ * @Description: CSV-based dictionary file manager with auto-initialization capabilities.
+        * @Date: Created at 23:14 on 2025/4/2
+        * @ModifiedBy: Garvyn
+        * @Version: V1.1
+        * @Functionality:
+        * - Auto-creates CSV file if missing
+ * - Thread-safe CRUD operations
+ * - CSV data validation and sanitization
+ * - Lazy loading with cache synchronization
  */
+
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
